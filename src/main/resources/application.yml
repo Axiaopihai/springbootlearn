@@ -1,0 +1,27 @@
+server:
+  port: 8097
+
+person:
+  age: ${random.int}
+  boo: false
+  maps: {k1: v1,k2: v2}
+  list:
+    - list1
+    - list2
+  last_name: 张三${random.uuid}_${person.address:北京}
+spring:
+  messages:
+    basename: messages.login
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tempdb?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=UTC
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+logging:
+  file:
+    path: c/
+
+
